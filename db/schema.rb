@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_04_092219) do
+ActiveRecord::Schema.define(version: 2018_05_04_093623) do
+
+  create_table "shop_settings", force: :cascade do |t|
+    t.string "admin_email"
+    t.integer "inventory_limit"
+    t.integer "email_notification_frequency"
+    t.boolean "email_subscription"
+    t.integer "inventory_auto_restock"
+    t.integer "shop_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "shops", force: :cascade do |t|
     t.string "shopify_domain", null: false

@@ -1,0 +1,42 @@
+<%= form_with(model: shop_setting, local: true) do |form| %>
+  <% if shop_setting.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(shop_setting.errors.count, "error") %> prohibited this shop_setting from being saved:</h2>
+
+      <ul>
+      <% shop_setting.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :admin_email %>
+    <%= form.text_field :admin_email %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inventory_limit %>
+    <%= form.range_field :inventory_limit, min:5, max:100, step:1 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email_notification_frequency %>
+    <%= form.range_field :email_notification_frequency, min:1, max:24, step:2 %>
+  </div>
+
+  <div class="field">
+    <%= form.label :email_subscription %>
+    <%= form.check_box :email_subscription %>
+  </div>
+
+  <div class="field">
+    <%= form.label :inventory_auto_restock %>
+    <%= form.range_field :inventory_auto_restock %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

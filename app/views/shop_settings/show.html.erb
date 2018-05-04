@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Admin email:</strong>
+  <%= @shop_setting.admin_email %>
+</p>
+
+<p>
+  <strong>Inventory limit:</strong>
+  <%= @shop_setting.inventory_limit %>
+</p>
+
+<p>
+  <strong>Email notification frequency:</strong>
+  <%= @shop_setting.email_notification_frequency %>
+</p>
+
+<p>
+  <strong>Email subscription:</strong>
+  <%= @shop_setting.email_subscription %>
+</p>
+
+<p>
+  <strong>Inventory auto restock:</strong>
+  <%= @shop_setting.inventory_auto_restock %>
+</p>
+
+<%= link_to 'Edit', edit_shop_setting_path(@shop_setting) %>
+

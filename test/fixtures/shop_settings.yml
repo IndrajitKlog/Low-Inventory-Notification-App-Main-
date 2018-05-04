@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  admin_email: MyString
+  inventory_limit: 1
+  email_notification_frequency: 1
+  email_subscription: false
+  inventory_auto_restock: 1
+  shop_id: 1
+
+two:
+  admin_email: MyString
+  inventory_limit: 1
+  email_notification_frequency: 1
+  email_subscription: false
+  inventory_auto_restock: 1
+  shop_id: 1
