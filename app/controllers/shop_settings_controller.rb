@@ -26,9 +26,17 @@ class ShopSettingsController < ShopifyApp::AuthenticatedController
      end
   end
 
+  def report
+    @current_shop = ShopifyAPI::Shop.current
+    @shop = Shop.find_by(:"shopify_domain" == @current_shop)
+    @products = ShopifyAPI::Product.find(:all, params: { limit: 250 })
+  end
+
   # GET /shop_settings/1
   # GET /shop_settings/1.json
   def show
+    @current_shop = ShopifyAPI::Shop.current
+    @shop = Shop.find_by(:"shopify_domain" == @current_shop)
   end
 
   # GET /shop_settings/new
@@ -38,6 +46,8 @@ class ShopSettingsController < ShopifyApp::AuthenticatedController
 
   # GET /shop_settings/1/edit
   def edit
+    @current_shop = ShopifyAPI::Shop.current
+    @shop = Shop.find_by(:"shopify_domain" == @current_shop)
   end
 
   # POST /shop_settings
