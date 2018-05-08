@@ -30,6 +30,13 @@ class ShopSettingsController < ShopifyApp::AuthenticatedController
     @current_shop = ShopifyAPI::Shop.current
     @shop = Shop.find_by(:"shopify_domain" == @current_shop)
     @products = ShopifyAPI::Product.find(:all, params: { limit: 250 })
+    respond_to do |format|
+      format.html
+      format.json
+      format.pdf do 
+        render pdf: "report"
+      end
+    end
   end
 
   # GET /shop_settings/1

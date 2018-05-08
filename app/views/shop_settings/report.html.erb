@@ -12,7 +12,8 @@
     	<div class="col-sm-3">
       		<%= link_to "Setting", shop_setting_path(@shop.shop_setting.id) %> |
       		<%= link_to "Report", shop_settings_report_path %> |
-      		<%= link_to "Plan", shop_settings_display_path %>
+      		<%= link_to "Plan", shop_settings_display_path %> |
+      		<%= link_to "Download_PDF", shop_settings_report_path(:format => :pdf)   %>
     	</div>
  	</div>
  	<div class="row">
@@ -46,6 +47,7 @@
 					  </tbody>
 					</table>
 			    	<a href="#" class="btn btn-primary">Go somewhere</a>
+
 			  </div>
 			</div>
 		</div>
